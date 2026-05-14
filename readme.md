@@ -1,16 +1,6 @@
-# 🎮 Caro AI (Gomoku) - Đồ án Trí tuệ nhân tạo
+# 🎮 Caro AI (Gomoku) - Cơ sở Trí tuệ nhân tạo
 
-![Python](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python)
-![Pygame](https://img.shields.io/badge/Library-Pygame-green?style=for-the-badge)
-![AI](https://img.shields.io/badge/Algorithm-Minimax%20%2B%20Alpha--Beta-red?style=for-the-badge)
-
-Dự án đồ án **Game Caro (Gomoku)** tích hợp trí tuệ nhân tạo (AI) sử dụng các thuật toán tối ưu hóa tìm kiếm, được phát triển bởi **Lê Đỗ Tùng Dương**.
-
-## 👨‍🎓 Thông tin tác giả
-* **Họ và tên:** Lê Đỗ Tùng Dương
-* **Mã sinh viên:** 24022304
-* **Đơn vị:** Đại học Công nghệ - ĐHQGHN (VNU-UET)
-
+Dự án đồ án **Game Caro (Gomoku)** tích hợp trí tuệ nhân tạo (AI) sử dụng các thuật toán tối ưu hóa tìm kiếm.
 ## 🌟 Tính năng nổi bật
 * **Chế độ chơi:** Hỗ trợ chơi với máy (PvE) và chơi hai người (PvP).
 * **Trí tuệ nhân tạo (AI) mạnh mẽ:**
