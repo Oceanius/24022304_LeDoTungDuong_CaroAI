@@ -32,5 +32,8 @@ cd 24022304_LeDoTungDuong_CaroAI
 
 # Cài đặt thư viện cần thiết
 pip install pygame
+```
 ### 3. Khởi động trò chơi
-Chạy file play.py hoặc mở Terminal gõ: python play.py
+Chạy file play.py hoặc vào Terminal gõ: python play.py
+
+
