@@ -38,23 +38,3 @@ Chạy file play.py hoặc vào Terminal gõ: python play.py
 
 ---
 
-## 📂 Cấu trúc thư mục
-24022304_LeDoTungDuong_CaroAI/
-├── play.py               # File khởi chạy chính (Entry Point) của trò chơi
-├── README.md             # Tài liệu hướng dẫn và mô tả dự án
-├── assets/               # Thư mục chứa tài nguyên đồ họa của game
-│   ├── board.jpg         # Hình ảnh bàn cờ gỗ 15x15
-│   ├── black_piece.png   # Hình ảnh quân cờ đen
-│   ├── white_piece.png   # Hình ảnh quân cờ trắng
-│   ├── menu_board.png    # Hình nền cho các bảng thông báo/menu
-│   └── button.png        # Hình nền cho các nút bấm (YES/NO, BLACK/WHITE)
-├── gui/                  # Module quản lý giao diện người dùng (Pygame)
-│   ├── __init__.py
-│   ├── interface.py      # Xử lý Render đồ họa, bàn cờ và hiệu ứng hình ảnh
-│   └── button.py         # Định nghĩa lớp Button và các tương tác chuột
-└── source/               # Module xử lý logic cốt lõi và Trí tuệ nhân tạo
-    ├── __init__.py
-    ├── AI.py             # Triển khai thuật toán Minimax, Alpha-Beta và Zobrist Hashing
-    ├── gomoku.py         # Quản lý luồng xử lý nước đi của AI và luật chơi
-    └── utils.py          # Hàm bổ trợ, tính điểm Heuristic và ánh xạ tọa độ
-
