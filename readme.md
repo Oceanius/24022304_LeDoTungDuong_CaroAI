@@ -36,4 +36,18 @@ pip install pygame
 ### 3. Khởi động trò chơi
 Chạy file play.py hoặc vào Terminal gõ: python play.py
 
+---
+
+## 📂 Cấu trúc thư mục
+24022304_LeDoTungDuong_CaroAI/
+ ┣ 📂 assets           # Chứa tài nguyên hình ảnh (board, black/white piece, buttons)
+ ┣ 📂 gui              # Quản lý giao diện và render đồ họa
+ ┃ ┣ 📜 button.py      # Lớp xử lý nút bấm tương tác
+ ┃ ┗ 📜 interface.py   # Xử lý hiển thị bàn cờ và hiệu ứng
+ ┣ 📂 source           # Logic xử lý AI và luật chơi
+ ┃ ┣ 📜 AI.py          # Triển khai thuật toán Minimax & Alpha-Beta
+ ┃ ┣ 📜 gomoku.py      # Điều phối trận đấu và phản hồi của AI
+ ┃ ┗ 📜 utils.py       # Hệ thống tính điểm Heuristic và Zobrist Table
+ ┣ 📜 play.py          # File entry point (Khởi chạy chương trình tại đây)
+ ┗ 📜 README.md        # Tài liệu hướng dẫn dự án
 
