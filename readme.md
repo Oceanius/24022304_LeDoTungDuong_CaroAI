@@ -1,100 +1,44 @@
-Caro AI 🎮
+```python?code_reference&code_event_index=6
+readme_content = """# 🎮 Caro AI (Gomoku) - Đồ án Trí tuệ nhân tạo
 
-Đây là project game Caro (Gomoku) được viết bằng Python và thư viện Pygame.
-Người chơi sẽ đấu với AI trên bàn cờ 15x15, trong đó AI sử dụng thuật toán Minimax kết hợp Alpha-Beta Pruning để tìm nước đi tối ưu.
+![Python](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python)
+![Pygame](https://img.shields.io/badge/Library-Pygame-green?style=for-the-badge)
+![AI](https://img.shields.io/badge/Algorithm-Minimax%20%2B%20Alpha--Beta-red?style=for-the-badge)
 
-Project được thực hiện với mục đích học tập và tìm hiểu về:
+Dự án đồ án **Game Caro (Gomoku)** tích hợp trí tuệ nhân tạo (AI) sử dụng các thuật toán tối ưu hóa tìm kiếm, được phát triển bởi **Lê Đỗ Tùng Dương**.
 
-AI trong game
-Thuật toán Minimax
-Alpha-Beta Pruning
-Zobrist Hashing
-Xử lý giao diện bằng Pygame
-Demo Gameplay
-Người chơi chọn quân đen hoặc trắng
-AI sẽ tự động tính toán nước đi
-Game tự kiểm tra thắng/thua
-Có thể chơi lại sau khi kết thúc
-Công nghệ sử dụng
-Python
-Pygame
-Thuật toán AI
+## 👨‍🎓 Thông tin tác giả
+* **Họ và tên:** Lê Đỗ Tùng Dương
+* **Mã sinh viên:** 24022304
+* **Đơn vị:** Đại học Công nghệ - ĐHQGHN (VNU-UET)
 
-AI trong project sử dụng:
+## 🌟 Tính năng nổi bật
+* **Chế độ chơi:** Hỗ trợ chơi với máy (PvE) và chơi hai người (PvP).
+* **Trí tuệ nhân tạo (AI) mạnh mẽ:**
+    * **Thuật toán Minimax:** Xây dựng cây trò chơi và duyệt các nước đi khả thi.
+    * **Cắt tỉa Alpha-Beta (Alpha-Beta Pruning):** Tối ưu hóa quá trình duyệt cây bằng cách loại bỏ các nhánh không ảnh hưởng đến kết quả cuối cùng, giúp AI tính toán nhanh hơn ở độ sâu lớn hơn.
+    * **Zobrist Hashing:** Mã hóa trạng thái bàn cờ thành các giá trị băm để lưu trữ và truy xuất nhanh chóng.
+    * **Bảng chuyển vị (Transposition Table):** Lưu trữ kết quả của các trạng thái đã tính toán để tránh lặp lại công việc.
+    * **Heuristic Scoring:** Hệ thống đánh giá thế cờ dựa trên các mẫu (patterns) như 4 quân hở đầu, 3 quân liên tiếp, cờ bị chặn... để đưa ra điểm số tấn công/phòng thủ chính xác.
+* **Giao diện đồ họa (GUI):** Xây dựng bằng thư viện **Pygame**, hỗ trợ menu chọn quân (Đen/Trắng), hiển thị kết quả và nút chơi lại.
 
-Minimax Algorithm
+## 🧠 Phân tích thuật toán AI
+AI trong dự án được triển khai trong file `source/AI.py` với các kỹ thuật chính:
+1. **Minimax & Alpha-Beta:** Đây là lõi của AI. Thuật toán cố gắng tối đa hóa điểm số của máy và tối thiểu hóa điểm số của người chơi. Alpha-Beta giúp cắt tỉa hiệu quả cây tìm kiếm.
+2. **Hàm Heuristic (Đánh giá thế cờ):** Nằm trong `source/utils.py`, sử dụng `patternDict` để chấm điểm các chuỗi quân cờ dọc, ngang, chéo.
+3. **Bound Search:** Chỉ tìm kiếm nước đi trong một phạm vi nhất định xung quanh các quân cờ đã đặt (thay vì toàn bộ bàn cờ 15x15) để tiết kiệm tài nguyên.
+4. **Zobrist Hashing:** Giúp định danh trạng thái bàn cờ duy nhất, hỗ trợ việc lưu trữ điểm số vào `transpositionTable`.
 
-Thuật toán Minimax giúp AI mô phỏng các nước đi trong tương lai để chọn ra nước đi tốt nhất.
-
-Alpha-Beta Pruning
-
-Kết hợp với Minimax để cắt tỉa các nhánh không cần thiết, giúp tăng tốc độ xử lý.
-
-Heuristic Evaluation
-
-Bàn cờ được đánh giá dựa trên các pattern như:
-
-4 quân liên tiếp
-Open 3
-Broken 3
-Open 2
-...
-
-Mỗi pattern sẽ có điểm số riêng để AI đánh giá thế cờ.
-
-Zobrist Hashing
-
-Dùng để lưu trạng thái bàn cờ trong Transposition Table nhằm giảm việc tính toán lại các trạng thái đã xét.
-
-Cấu trúc project
-24022304_LeDoTungDuong_CaroAI
-│
-├── assets/                # Hình ảnh giao diện và quân cờ
-│   ├── black_piece.png
-│   ├── white_piece.png
-│   ├── board.jpg
-│   └── ...
-│
-├── gui/                   # Giao diện game
-│   ├── button.py
-│   └── interface.py
-│
-├── source/
-│   ├── AI.py              # Xử lý AI và thuật toán Minimax
-│   ├── gomoku.py          # Logic lượt đi của AI
-│   ├── utils.py           # Các hàm hỗ trợ
-│   └── ...
-│
-├── play.py                # File chạy game chính
-└── README.md
-Cách chạy project
-1. Clone repository
-git clone https://github.com/Oceanius/24022304_LeDoTungDuong_CaroAI.git
-2. Di chuyển vào thư mục project
-cd 24022304_LeDoTungDuong_CaroAI
-3. Cài thư viện cần thiết
-pip install pygame
-4. Chạy game
-python play.py
-Một vài đặc điểm của AI
-AI ưu tiên các nước đi nguy hiểm
-Có đánh giá threat level để sắp xếp candidate moves
-Có sử dụng Transposition Table để tối ưu Minimax
-Có incremental evaluation giúp giảm thời gian tính toán
-Hạn chế
-Khi tăng depth lớn thì AI tính toán vẫn khá chậm
-Giao diện còn đơn giản
-Chưa có nhiều mức độ khó
-Chưa hỗ trợ chơi online
-Hướng phát triển
-Tối ưu tốc độ AI
-Thêm nhiều độ khó
-Thêm animation và âm thanh
-Thêm PvP
-Cải thiện giao diện
-Tác giả
-Lê Đỗ Tùng Dương
-Student Project
-Repository
-
-24022304_LeDoTungDuong_CaroAI
+## 📂 Cấu trúc thư mục
+```text
+📦 24022304_LeDoTungDuong_CaroAI
+ ┣ 📂 assets           # Hình ảnh bàn cờ, quân cờ (board.jpg, black_piece.png, white_piece.png,...)
+ ┣ 📂 gui              # Quản lý giao diện và thành phần giao diện
+ ┃ ┣ 📜 button.py      # Lớp Button xử lý tương tác nút bấm
+ ┃ ┗ 📜 interface.py   # Lớp GameUI xử lý hiển thị chính và Render
+ ┣ 📂 source           # Chứa logic xử lý cốt lõi
+ ┃ ┣ 📜 AI.py          # Triển khai thuật toán Minimax, Alpha-Beta và Zobrist Hashing
+ ┃ ┣ 📜 gomoku.py      # Logic điều phối nước đi và tính thời gian phản hồi của AI
+ ┃ ┗ 📜 utils.py       # Các hàm bổ trợ, ánh xạ tọa độ và chấm điểm Heuristic
+ ┣ 📜 play.py          # File entry point - Khởi chạy chương trình
+ ┗ 📜 README.md        # Tài liệu hướng dẫn
